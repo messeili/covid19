@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <%- include('../partials/nav');%>
+    <div class="flex">
+        <p><%=data.country%></p>
+        <p><%=data.countrycode%></p>
+        <p><%=data.totalconfirmed%></p>
+        <p><%=data.totaldeaths%></p>
+        <p><%=data.totalrecovered%></p>
+        <p><%=data.date%></p>
+        <form action="/deleteCountry/<%=data.id%>?_method=delete" method="post">
+            <button>DELETE</button>
+        </form>
+
+        <form action="/updateCountry/<%=data.id%>?_method=put" method="post">
+            <input type="text" name="country" value="<%=data.country%>">
+            <input type="text" name="countryCode" value="<%=data.countrycode%>">
+            <input type="text" name="totalConfirmed" value="<%=data.totalonfirmed%>">
+            <input type="text" name="totalDeaths" value="<%=data.totaldeaths%>">
+            <input type="text" name="totalRecovered" value="<%=data.totalrecovered%>">
+            <input type="text" name="date" value="<%=data.data%>">
+            <button>update</button>
+        </form>
+
+    </div>
+</body>
+
+</html>

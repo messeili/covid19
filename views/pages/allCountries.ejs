@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <%- include('../partials/nav');%>
+    <%data.forEach(item=>{%>
+    <%console.log(data)%>
+    <div class="flex">
+        <p><%=item.Country%></p>
+        <p><%=item.CountryCode%></p>
+        <p><%=item.TotalConfirmed%></p>
+        <p><%=item.TotalDeaths%></p>
+        <p><%=item.TotalRecovered%></p>
+        <p><%=item.Date%></p>
+        <form action="/addCountry" method="post">
+            <input type="hidden" name="country" value="<%=item.Country%>">
+            <input type="hidden" name="countryCode" value="<%=item.CountryCode%>">
+            <input type="hidden" name="totalConfirmed" value="<%=item.TotalConfirmed%>">
+            <input type="hidden" name="totalDeaths" value="<%=item.TotalDeaths%>">
+            <input type="hidden" name="totalRecovered" value="<%=item.TotalRecovered%>">
+            <input type="hidden" name="date" value="<%=item.Data%>">
+            <button>ADD to My Records</button>
+        </form>
+
+    </div>
+
+    <%})%>
+</body>
+
+</html>

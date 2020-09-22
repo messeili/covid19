@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <%- include('../partials/nav');%>
+    <div class="flex">
+        <div class="flex">
+            <p>Total Confirmed:<%=data.TotalConfirmed%></p>
+        </div>
+        <div class="flex">
+            <p>Total Deaths:<%=data.TotalDeaths%></p>
+        </div>
+        <div class="flex">
+            <p>Total Recovered: <%=data.TotalRecovered%></p>
+        </div>
+
+        <form action="/getCountryResult" method="post">
+            <input type="text" name="country" value="">
+            <input type="date" name="datafrom" value="">
+            <input type="date" name="dateto" value="">
+            <button>Search</button>
+
+        </form>
+    </div>
+</body>
+
+</html>
