@@ -1,18 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('../partials/head');%>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
 
 <body>
     <%- include('../partials/nav');%>
-    <%data.forEach(item=>{%>
+    <%data.forEach(items=>{%>
     <div class="flex">
-        <p><%=data.Date%></p>
-        <p><%=data.Cases%></p>
+        <p><%=items.Date%></p>
+        <p><%=items.Cases%></p>
     </div>
 
     <%})%>

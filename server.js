@@ -75,7 +75,12 @@ function addCountryHandler(req, res) {
 function myRecordsHandler(req, res) {
     let SQL = `SELECT * FROM covid19;`;
     client.query(SQL).then((results) => {
-        res.render('pages/myRecords', { data: results.rows })
+        if (results.rows.length != 0) {
+            res.render('pages/myRecords', { data: results.rows })
+        } else {
+            res.render('pages/error', { data: "There is no Records Here" })
+
+        }
 
     })
 }
